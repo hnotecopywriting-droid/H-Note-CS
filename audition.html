@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Audition | H-Note Selective Creative Services</title>
+    <style>
+        :root { --h-note-red: #ff003c; --gold: #ffcc00; --dark: #0a0a0a; }
+        body { background: var(--dark); color: white; font-family: sans-serif; padding: 40px; }
+        .form-container { max-width: 600px; margin: 0 auto; background: #1a1a1a; padding: 30px; border: 1px solid var(--gold); }
+        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; background: #222; border: 1px solid #444; color: white; }
+        .btn-pay { background: var(--h-note-red); color: white; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
+        .assessment-note { font-style: italic; color: var(--gold); font-size: 0.9rem; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1 style="color: var(--gold);">THE AUDITION INTAKE</h1>
+        <p>Complete this profile to prepare for your 1-Hour Assessment with the Director.</p>
+        
+        <form id="auditionForm">
+            <label>Full Name (Stage Name)</label>
+            <input type="text" placeholder="Your Name" required>
+
+            <label>Your Creative Discipline</label>
+            <select>
+                <option>Music / Vocal</option>
+                <option>Dance / Movement</option>
+                <option>Acting / Performance</option>
+                <option>Visual Arts / Other</option>
+            </select>
+
+            <label>Business Vision</label>
+            <textarea placeholder="Describe the 'show' you are trying to build (your business model)..." rows="4"></textarea>
+
+            <label>Weekly Commitment Level</label>
+            <select>
+                <option>Intensive (4 days/week - Classroom Goal)</option>
+                <option>Steady (3 days/week - Classroom Goal)</option>
+                <option>Flexible (Counseling/Subscription only)</option>
+            </select>
+
+            <div style="margin: 20px 0; border: 1px dashed var(--gold); padding: 15px;">
+                <p><strong>Step 2: The Assessment Fee</strong></p>
+                <p>An initial 1-hour assessment is required for placement. $ [Insert Price]</p>
+                <button type="button" class="btn-pay">PAY & SCHEDULE YOUR ASSESSMENT</button>
+            </div>
+            
+            <p class="assessment-note">*Following the assessment, you will be notified of your placement into a specific H-Note Classroom (10-15 students) or Counseling track.</p>
+        </form>
+    </div>
+
+</body>
+</html>

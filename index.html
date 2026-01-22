@@ -6,51 +6,51 @@
     <title>The H-Note | Wake Up What's Inside</title>
     <style>
         :root {
-            --stage-black: #0a0a0a;
-            --spotlight-white: #ffffff;
             --h-note-red: #ff003c;
             --gold-accent: #ffcc00;
+            --stage-black: #0a0a0a;
+            --spotlight-white: #ffffff;
         }
 
         body {
             margin: 0;
             background-color: var(--stage-black);
             color: var(--spotlight-white);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* The Hero Stage */
-        .stage {
+        /* --- THE HERO STAGE --- */
+        .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
             text-align: center;
+            position: relative;
         }
 
         .tagline {
-            font-size: 1.5rem;
-            letter-spacing: 5px;
+            font-size: 1.2rem;
+            letter-spacing: 6px;
             color: var(--gold-accent);
-            margin-bottom: 20px;
             text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
-        /* The Tearing Animation */
+        /* Tearing Animation */
         .burst-container {
             position: relative;
             width: 300px;
-            height: 400px;
-            border: 1px solid rgba(255,255,255,0.1); /* Silhouette Placeholder */
+            height: 200px;
         }
 
         .h-note-tear {
             position: absolute;
             font-weight: 900;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--h-note-red);
             opacity: 0;
             filter: blur(10px);
@@ -59,135 +59,145 @@
 
         @keyframes tearEffect {
             0% { transform: scale(0.2); opacity: 0; filter: blur(10px); }
-            10% { transform: scale(1.5); opacity: 1; filter: blur(0px); text-shadow: 0 0 20px var(--h-note-red); }
+            10% { transform: scale(1.3); opacity: 1; filter: blur(0px); text-shadow: 0 0 25px var(--h-note-red); }
             20% { transform: scale(1); opacity: 0; }
             100% { opacity: 0; }
         }
 
-        /* Locations for the "Tear" */
-        .loc-head { top: 0%; left: 25%; animation-delay: 0s; }
-        .loc-mouth { top: 20%; left: 30%; animation-delay: 1s; }
-        .loc-heart { top: 40%; left: 20%; animation-delay: 2s; }
-        .loc-gut { top: 60%; left: 35%; animation-delay: 3s; }
+        .loc-1 { top: 0%; left: 20%; animation-delay: 0s; }
+        .loc-2 { top: 30%; left: 40%; animation-delay: 1.3s; }
+        .loc-3 { top: 60%; left: 10%; animation-delay: 2.6s; }
 
         .main-title {
-            font-size: 5rem;
+            font-size: 4rem;
             margin: 0;
-            z-index: 10;
             background: linear-gradient(to bottom, #fff, #888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            z-index: 10;
         }
 
-        .services-grid {
+        /* --- SERVICES GRID --- */
+        .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 80px 10%;
+            background: #111;
         }
 
-        .service-card {
-            background: #1a1a1a;
-            padding: 30px;
+        .card {
+            background: #000;
+            padding: 40px;
             border-left: 4px solid var(--h-note-red);
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
-        .service-card:hover {
-            background: var(--h-note-red);
+        .card:hover {
             transform: translateY(-10px);
+            border-color: var(--gold-accent);
+        }
+
+        /* --- THE BOX OFFICE (FILING FEE) --- */
+        .box-office {
+            text-align: center;
+            padding: 100px 20px;
+            border-top: 2px solid var(--h-note-red);
+        }
+
+        .fee-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            padding: 50px;
+            border: 1px solid #333;
+            border-radius: 20px;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            color: var(--h-note-red);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background: var(--h-note-red);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #cc0030;
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-    <section class="stage">
+    <section class="hero">
         <p class="tagline">Wake Up What's Inside You</p>
         
         <div class="burst-container">
-            <div class="h-note-tear loc-head">H-NOTE</div>
-            <div class="h-note-tear loc-mouth">H-NOTE</div>
-            <div class="h-note-tear loc-heart">H-NOTE</div>
-            <div class="h-note-tear loc-gut">H-NOTE</div>
+            <div class="h-note-tear loc-1">H-NOTE</div>
+            <div class="h-note-tear loc-2">H-NOTE</div>
+            <div class="h-note-tear loc-3">H-NOTE</div>
         </div>
 
         <h1 class="main-title">THE H-NOTE</h1>
         <p>Selective Creative Services</p>
     </section>
 
-    <section class="services-grid">
-        <div class="service-card">
-            <h3>Classes & Performance</h3>
-            <p>Master your confidence through music and dance.</p>
+    <section class="services">
+        <div class="card">
+            <h3>Elite Classrooms</h3>
+            <p>Placement in curated groups of 10-15. Intensive business training through performing arts.</p>
         </div>
-        <div class="service-card">
-            <h3>Business Counseling</h3>
-            <p>Direct your business model like a world-class show.</p>
+        <div class="card">
+            <h3>Creative Counseling</h3>
+            <p>1-on-1 directorship to refine your business model and find your brand's rhythm.</p>
         </div>
-        <div class="service-card">
-            <h3>The Ensemble</h3>
-            <p>Subscription access to groups and coaching.</p>
-        </div>
-        <div class="service-card">
-            <h3>The Toolkit</h3>
-            <p>Copywriting, Marketing, and Management tools.</p>
+        <div class="card">
+            <h3>The Clubhouse</h3>
+            <p>Subscription access to private groups, live Flash Rooms, and collaborative tools.</p>
         </div>
     </section>
-<hr style="border: 1px solid #333; margin: 100px 0;">
 
-<section id="toolkit" style="padding: 50px;">
-    <h2 style="text-align: center; color: var(--gold-accent); font-size: 2.5rem;">THE BACKSTAGE TOOLKIT</h2>
-    <p style="text-align: center; margin-bottom: 50px;">Prepare your show before the curtain rises.</p>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-        
-        <div class="service-card" style="background: #111; border: 1px solid var(--h-note-red);">
-            <h3>📜 The Scriptwriter</h3>
-            <p>Input your product, and we'll frame it as the Star.</p>
-            <input type="text" id="productName" placeholder="What is your star product?" style="width: 90%; padding: 10px; margin-bottom: 10px; background: #222; color: white; border: none;">
-            <button onclick="generateScript()" style="background: var(--h-note-red); color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">WRITE THE SCRIPT</button>
-            <div id="scriptOutput" style="margin-top: 20px; font-style: italic; color: var(--gold-accent);"></div>
+    <section class="box-office" id="audition">
+        <div class="fee-container">
+            <h2 style="color: var(--gold-accent);">THE AUDITION</h2>
+            <p>Application Filing Fee</p>
+            <div class="price">$25.00</div>
+            <p style="color: #aaa; margin-bottom: 30px;">
+                Covers your 1-hour Professional Assessment, Intake Interview, and Classroom Placement Analysis.
+            </p>
+            
+            <a href="#" class="cta-button">Pay Filing Fee & Apply</a>
+            
+            <p style="margin-top: 25px; font-size: 0.8rem; color: #555;">
+                *All candidates must pass the assessment to join the Ensemble or Classrooms.
+            </p>
         </div>
+    </section>
 
-        <div class="service-card" style="background: #111; border: 1px solid var(--gold-accent);">
-            <h3>💃 The Choreographer</h3>
-            <p>Plan your audience's movement through your brand.</p>
-            <select id="campaignType" style="width: 95%; padding: 10px; margin-bottom: 10px; background: #222; color: white; border: none;">
-                <option value="launch">The Grand Opening (Product Launch)</option>
-                <option value="trust">The Solo Performance (Building Authority)</option>
-                <option value="energy">The Encore (Retaining Customers)</option>
-            </select>
-            <button onclick="generateChoreography()" style="background: var(--gold-accent); color: black; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">MAP THE MOVEMENT</button>
-            <ul id="choreographyOutput" style="margin-top: 20px; list-style-type: none; padding: 0;"></ul>
-        </div>
+    <footer>
+        &copy; 2026 The H-Note Selective Creative Services. Business is a Show.
+    </footer>
 
-    </div>
-</section>
-
-<script>
-    // SCRIPTWRITER LOGIC
-    function generateScript() {
-        const product = document.getElementById('productName').value || "Your Product";
-        const output = document.getElementById('scriptOutput');
-        output.innerHTML = `“Ladies and Gentlemen, the stage is set. But the spotlight isn't on the lights—it's on <strong>${product}</strong>. This isn't just a purchase; it's a performance that changes the game.”`;
-    }
-
-    // CHOREOGRAPHER LOGIC
-    function generateChoreography() {
-        const type = document.getElementById('campaignType').value;
-        const output = document.getElementById('choreographyOutput');
-        let steps = [];
-
-        if(type === 'launch') {
-            steps = ["1. The Overture: Tease the 'burst' on Social Media.", "2. The First Act: Email reveal to your inner circle.", "3. The Standing Ovation: Live launch event/webinar."];
-        } else if(type === 'trust') {
-            steps = ["1. The Rehearsal: Share behind-the-scenes counseling tips.", "2. The Monologue: Write a deep-dive blog post.", "3. The Q&A: Direct engagement with the audience."];
-        } else {
-            steps = ["1. The Bow: Thank your customers with a gift.", "2. The Encore: Special discount on the next show.", "3. The Community: Invite them to The Ensemble group."];
-        }
-
-        output.innerHTML = steps.map(step => `<li style="margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px;">${step}</li>`).join('');
-    }
-</script>
-</body>
+    </body>
 </html>

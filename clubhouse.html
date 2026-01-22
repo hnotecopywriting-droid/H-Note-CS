@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Clubhouse | H-Note Member Portal</title>
+    <style>
+        :root {
+            --h-note-red: #ff003c;
+            --stage-black: #050505;
+            --neon-blue: #00f2ff; /* Added for a 'Live' feel */
+        }
+        body { background: var(--stage-black); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; }
+        
+        .sidebar { width: 250px; position: fixed; height: 100%; background: #111; padding: 20px; border-right: 1px solid #333; }
+        .main-content { margin-left: 290px; padding: 40px; }
+        
+        .flash-room-card {
+            background: linear-gradient(45deg, #1a1a1a, #222);
+            border-left: 5px solid var(--neon-blue);
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .live-indicator {
+            background: var(--h-note-red);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 0% {opacity: 1;} 50% {opacity: 0.4;} 100% {opacity: 1;} }
+
+        .chat-box-area {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: #1a1a1a;
+            border: 1px solid var(--h-note-red);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2 style="color: var(--h-note-red);">H-NOTE</h2>
+        <p>Student: <strong>[Name]</strong></p>
+        <hr>
+        <nav>
+            <p>🎭 My Classroom</p>
+            <p>📂 Upload Script/Video</p>
+            <p>🎸 Practice Room</p>
+            <p>💳 Subscription Info</p>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome Backstage</h1>
+        
+        <div class="flash-room-card">
+            <div>
+                <h3>Main Stage: Live Flash Room</h3>
+                <p>Status: Classroom A (Business Choreography) is in session.</p>
+            </div>
+            <div class="live-indicator">LIVE</div>
+            <button style="padding: 10px 20px; background: var(--neon-blue); border:none; cursor:pointer;">ENTER ROOM</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: #1a1a1a; padding: 20px; border: 1px solid #333;">
+                <h4>📤 Upload for Review</h4>
+                <p>Share your marketing "performance" for feedback.</p>
+                <input type="file" style="color: #888;">
+            </div>
+            <div style="background: #1a1a1a; padding: 20px; border: 1px solid #333;">
+                <h4>📥 Download Tools</h4>
+                <p>Access your copywriting templates and business scripts.</p>
+                <button>Open Library</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-box-area">
+        <div style="background: var(--h-note-red); padding: 10px; font-weight: bold;">🤖 AI Stagehand</div>
+        <div style="flex-grow: 1; padding: 10px; font-size: 0.9rem; color: #ccc;">
+            "Ready to rehearse? Ask me anything about your business show."
+        </div>
+        <input type="text" placeholder="Type a message..." style="padding: 10px; background: #000; border: none; color: white;">
+    </div>
+
+</body>
+</html>

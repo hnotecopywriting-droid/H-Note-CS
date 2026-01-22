@@ -133,6 +133,61 @@
             <p>Copywriting, Marketing, and Management tools.</p>
         </div>
     </section>
+<hr style="border: 1px solid #333; margin: 100px 0;">
 
+<section id="toolkit" style="padding: 50px;">
+    <h2 style="text-align: center; color: var(--gold-accent); font-size: 2.5rem;">THE BACKSTAGE TOOLKIT</h2>
+    <p style="text-align: center; margin-bottom: 50px;">Prepare your show before the curtain rises.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        
+        <div class="service-card" style="background: #111; border: 1px solid var(--h-note-red);">
+            <h3>📜 The Scriptwriter</h3>
+            <p>Input your product, and we'll frame it as the Star.</p>
+            <input type="text" id="productName" placeholder="What is your star product?" style="width: 90%; padding: 10px; margin-bottom: 10px; background: #222; color: white; border: none;">
+            <button onclick="generateScript()" style="background: var(--h-note-red); color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">WRITE THE SCRIPT</button>
+            <div id="scriptOutput" style="margin-top: 20px; font-style: italic; color: var(--gold-accent);"></div>
+        </div>
+
+        <div class="service-card" style="background: #111; border: 1px solid var(--gold-accent);">
+            <h3>💃 The Choreographer</h3>
+            <p>Plan your audience's movement through your brand.</p>
+            <select id="campaignType" style="width: 95%; padding: 10px; margin-bottom: 10px; background: #222; color: white; border: none;">
+                <option value="launch">The Grand Opening (Product Launch)</option>
+                <option value="trust">The Solo Performance (Building Authority)</option>
+                <option value="energy">The Encore (Retaining Customers)</option>
+            </select>
+            <button onclick="generateChoreography()" style="background: var(--gold-accent); color: black; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">MAP THE MOVEMENT</button>
+            <ul id="choreographyOutput" style="margin-top: 20px; list-style-type: none; padding: 0;"></ul>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // SCRIPTWRITER LOGIC
+    function generateScript() {
+        const product = document.getElementById('productName').value || "Your Product";
+        const output = document.getElementById('scriptOutput');
+        output.innerHTML = `“Ladies and Gentlemen, the stage is set. But the spotlight isn't on the lights—it's on <strong>${product}</strong>. This isn't just a purchase; it's a performance that changes the game.”`;
+    }
+
+    // CHOREOGRAPHER LOGIC
+    function generateChoreography() {
+        const type = document.getElementById('campaignType').value;
+        const output = document.getElementById('choreographyOutput');
+        let steps = [];
+
+        if(type === 'launch') {
+            steps = ["1. The Overture: Tease the 'burst' on Social Media.", "2. The First Act: Email reveal to your inner circle.", "3. The Standing Ovation: Live launch event/webinar."];
+        } else if(type === 'trust') {
+            steps = ["1. The Rehearsal: Share behind-the-scenes counseling tips.", "2. The Monologue: Write a deep-dive blog post.", "3. The Q&A: Direct engagement with the audience."];
+        } else {
+            steps = ["1. The Bow: Thank your customers with a gift.", "2. The Encore: Special discount on the next show.", "3. The Community: Invite them to The Ensemble group."];
+        }
+
+        output.innerHTML = steps.map(step => `<li style="margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px;">${step}</li>`).join('');
+    }
+</script>
 </body>
 </html>
